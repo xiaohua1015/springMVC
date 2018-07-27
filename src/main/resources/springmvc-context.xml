@@ -10,7 +10,7 @@
     <mvc:annotation-driven/>
     <context:component-scan base-package="cn.isdev.springmvc"/>
 
-    <!--<bean name="/home" class="cn.isdev.springmvc.controller.UserController"/>
+    <!--<bean name="/home" class="cn.isdev.springmvc.controller.UserController1"/>
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         &lt;!&ndash;<property name="prefix" value="/pages/"/>&ndash;&gt;
         <property name="suffix" value=".jsp"/>

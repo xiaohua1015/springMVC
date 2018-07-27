@@ -1,13 +1,16 @@
 package cn.isdev.springmvc.bean;
 
+import java.util.Date;
+
 /**
  * Created by lsh134667 on 2018/7/25.
  */
 public class User {
 
-    private int id;
+    private Integer id;
     private String name;
     private String password;
+    private Date hiredate;
 
     public int getId() {
         return id;
@@ -31,5 +34,23 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Date getHiredate() {
+        return hiredate;
+    }
+
+    public void setHiredate(Date hiredate) {
+        this.hiredate = hiredate;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", hiredate=" + hiredate +
+                '}';
     }
 }

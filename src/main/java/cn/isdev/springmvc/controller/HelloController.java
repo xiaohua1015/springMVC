@@ -2,6 +2,7 @@ package cn.isdev.springmvc.controller;
 
 import cn.isdev.springmvc.bean.User;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -29,13 +30,13 @@ public class HelloController {
     public String redirect(HttpServletRequest request, HttpServletResponse response) {
         System.out.println("request.URI ==== " + request.getRequestURI());
         new ModelAndView();
-        return "redirect:/method";
+        return "redirect:/getuser";
     }
 
 
-    @RequestMapping(value="/method", method = RequestMethod.GET)
+    @RequestMapping(value="/getuser", method = RequestMethod.GET)
     @ResponseBody
-    public User hello(HttpServletRequest request, HttpServletResponse response) {
+    public User getuser(HttpServletRequest request, HttpServletResponse response) {
 
 //        System.out.println("name = " + name + ": age = " + age);
         System.out.println("request.URI ==== " + request.getRequestURI());
@@ -44,5 +45,11 @@ public class HelloController {
         user.setName("小华");
         user.setPassword("qwer123456");
         return user;
+    }
+
+    @RequestMapping(value = {"world", "hello", "123"})
+    public String world(Model model){
+        model.addAttribute("message", "你好世界");
+        return "hello";
     }
 }
